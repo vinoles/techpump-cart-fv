@@ -132,4 +132,24 @@ final class Cart
     {
         return session('token-cart');
     }
+
+    /**
+     * Get total quantity
+     *
+     * @return int
+     */
+    public function getTotalQuantity(): int
+    {
+        return $this->items()->sum('quantity');
+    }
+
+    /**
+     * Get total items
+     *
+     * @return int
+     */
+    public function getTotalItems(): int
+    {
+        return $this->items()->count();
+    }
 }

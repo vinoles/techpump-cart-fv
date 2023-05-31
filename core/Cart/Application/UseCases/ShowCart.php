@@ -21,14 +21,12 @@ final class ShowCart
      */
     public function execute(): array
     {
-        $items = $this->cartRepository->items();
-
         return [
-            'items' => $items->toArray(),
+            'items' => $this->cartRepository->items()->toArray(),
             'subtotal' => $this->cartRepository->getSubTotal(),
             'total' => $this->cartRepository->getTotal(),
-            'quantity' => $items->sum('quantity'),
-            'total_items' => $items->count(),
+            'total_quantity' => $this->cartRepository->getTotalQuantity(),
+            'total_items' => $this->cartRepository->getTotalItems(),
         ];
     }
 }

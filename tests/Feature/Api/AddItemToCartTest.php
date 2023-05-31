@@ -38,7 +38,7 @@ class AddItemToCartTest extends TestCase
 
         $this->assertEquals(
             $quantity,
-            $response->json('quantity')
+            $response->json('total_quantity')
         );
     }
 

@@ -62,8 +62,8 @@ class RetrieveCartTest extends TestCase
         );
 
         $this->assertEquals(
-            $cart->getContent()->sum('quantity'),
-            $totalItems
+            $totalItems,
+            $response->json('total_quantity')
         );
     }
 }
